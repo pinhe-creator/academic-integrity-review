@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # 填你的邮箱进入 Crossref polite 池（更稳定，可留空）
+      - CROSSREF_MAILTO=${CROSSREF_MAILTO:-}
+      # Unpaywall 不需要 key，只需邮箱（留空则复用 CROSSREF_MAILTO）
+      - UNPAYWALL_EMAIL=${UNPAYWALL_EMAIL:-}
+      # 申请到 PubPeer API key 后再填（留空则不自动查 PubPeer，只给手动检索链接）
+      - PUBPEER_API_KEY=${PUBPEER_API_KEY:-}
+      - PUBPEER_API_BASE=${PUBPEER_API_BASE:-}
+    restart: unless-stopped

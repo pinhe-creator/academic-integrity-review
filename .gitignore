@@ -1,0 +1,15 @@
+# 使用统计计数文件（不纳入版本库，避免提交/部署时被覆盖归零）
+stats.json
+data/
+
+# 本地环境变量（含 Upstash 等密钥，绝不可提交）
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 系统
+.DS_Store
