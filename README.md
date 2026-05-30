@@ -144,12 +144,3 @@
 ## 联系 / Contact
 
 问题、建议、Bug 反馈或合作：**pinhechen698@gmail.com**
-
-## 许可 / License
-
-建议采用 MIT 或 Apache-2.0（自行添加 LICENSE 文件）。Retraction Watch 数据经 Crossref 以 CC0 公开；各第三方数据请遵循其各自条款。
-
-**本地运行也会计数**：默认写入本机的 `stats.json`，但这与线上是**两套、各算各的**。
-若想让本地的每次「打开 / 核查」也上报到线上**同一个**中央计数器，把 `.env.example` 复制为 `.env`，
-填入与线上**相同**的 `UPSTASH_REDIS_REST_URL` 与 `UPSTASH_REDIS_REST_TOKEN` 即可——本地启动会自动加载 `.env`。
-`.env` 含密钥、已被 `.gitignore` 排除，**请勿提交或分发**。
