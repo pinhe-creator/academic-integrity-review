@@ -149,20 +149,6 @@
 
 建议采用 MIT 或 Apache-2.0（自行添加 LICENSE 文件）。Retraction Watch 数据经 Crossref 以 CC0 公开；各第三方数据请遵循其各自条款。
 
-## 使用统计 / Usage stats
-
-页脚展示「访问次数」与「已核查次数」（也可访问 `/stats` 查看原始数字）。后端**自动二选一**：
-
-- **默认（本地文件）**：记录在 `stats.json`，路径可用环境变量 `STATS_FILE` 修改。适合本地开发；
-  但免费 PaaS 文件系统是临时的，**重启 / 重新部署会清零**。
-- **Upstash Redis（推荐线上用，外部存储，跨重启累计）**：设置以下两个环境变量后**自动启用，代码无需改动**：
-  - `UPSTASH_REDIS_REST_URL`
-  - `UPSTASH_REDIS_REST_TOKEN`
-
-  申请步骤：到 <https://upstash.com> 注册 → 新建一个 Redis 数据库（区域选离你服务器近的）→
-  在数据库页面的 **REST API** 区复制上面两个值 → 填进平台的环境变量 → 重新部署。计数从此跨重启 / 重新部署累计。
-  （计数用 Redis 的 `INCR`，天然原子，多人同时访问也不会数错。）
-
 **本地运行也会计数**：默认写入本机的 `stats.json`，但这与线上是**两套、各算各的**。
 若想让本地的每次「打开 / 核查」也上报到线上**同一个**中央计数器，把 `.env.example` 复制为 `.env`，
 填入与线上**相同**的 `UPSTASH_REDIS_REST_URL` 与 `UPSTASH_REDIS_REST_TOKEN` 即可——本地启动会自动加载 `.env`。
