@@ -5,7 +5,7 @@
 
 > **它只呈现证据，不下结论。** 不输出“造假概率”、不做任何指控——判断权完全交给你。
 
-- 🌐 **在线访问**：_部署完成后把网址填在这里_
+- 🌐 **在线访问**：_https://academic-integrity.onrender.com_
 - ✉️ **联系 / Contact**：pinhechen698@gmail.com
 
 ---
